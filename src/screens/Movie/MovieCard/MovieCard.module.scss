@@ -1,0 +1,130 @@
+@use "../../../styles/constants";
+
+.card {
+  width: 458px;
+  height: 270px;
+  padding: 20px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+
+  @include constants.tablet {
+    width: 100%;
+    padding: 15px 15px;
+  }
+
+  @include constants.mobile {
+    height: 240px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.title {
+  height: 60px;
+  font-weight: bold;
+  font-size: constants.$fontTitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontTitleTablet;
+  }
+
+  @include constants.mobile {
+    height: 40px;
+    font-size: constants.$fontTitleMobile;
+  }
+}
+
+.genre {
+  font-weight: bold;
+  color: constants.$primary;
+  font-size: constants.$fontSubtitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.main {
+  display: flex;
+  margin-top: 8px;
+}
+
+.image {
+  width: 80px;
+  height: 120px;
+  background-color: lightgray;
+  flex-shrink: 0;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px 15px;
+  row-gap: 7px;
+
+  @include constants.tablet {
+    width: 100%;
+  }
+}
+
+.director {
+  font-weight: bold;
+  font-size: constants.$fontSubtitleDesktop;
+
+  @include constants.tablet {
+    height: 40px;
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.country {
+  font-weight: bold;
+  font-size: constants.$fontSubtitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 8px 8px;
+  background-color: constants.$primary;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+  font-size: constants.$fontSubtitleDesktop;
+
+  @include constants.tablet {
+    max-width: 400px;
+    align-self: center;
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    width: 200px;
+    font-size: constants.$fontSubtitleMobile;
+  }
+}

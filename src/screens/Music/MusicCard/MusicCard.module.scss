@@ -1,0 +1,98 @@
+@use "../../../styles/constants";
+
+.card {
+  width: 692px;
+  height: 120px;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  padding: 20px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+
+  @include constants.tablet {
+    width: 100%;
+    height: 110px;
+    padding: 15px 15px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.image {
+  background-color: lightgray;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.info {
+  width: 70%;
+
+  @include constants.tablet {
+    font-size: constants.$fontTitleTablet;
+    width: 60%;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontTitleMobile;
+    width: calc(100% - 175px);
+  }
+}
+
+.artist {
+  max-width: 100%;
+  font-weight: bold;
+  font-size: constants.$fontTitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontTitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontTitleMobile;
+  }
+}
+
+.composition {
+  color: constants.$secondary;
+  max-width: 100%;
+  font-weight: bold;
+  font-size: constants.$fontSubtitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.button {
+  width: 90px;
+  padding: 10px 10px;
+  background-color: constants.$primary;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  text-align: center;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: constants.$fontSubtitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}

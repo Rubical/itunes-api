@@ -1,0 +1,132 @@
+@use "../../../styles/constants";
+
+.card {
+  width: 346px;
+  height: 420px;
+  padding: 20px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include constants.tablet {
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.image {
+  background-color: lightgray;
+  flex-shrink: 0;
+  width: 80px;
+  height: 120px;
+}
+
+.genre {
+  margin-top: 10px;
+  color: constants.$primary;
+  font-weight: bold;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.title {
+  height: 170px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: constants.$fontTitleDesktop;
+
+  @include constants.tablet {
+    font-size: constants.$fontTitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontTitleMobile;
+  }
+}
+
+.infoContainer {
+  width: 100%;
+  padding: 15px 10px 0 10px;
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+
+  @include constants.tablet {
+    justify-content: center;
+    column-gap: 50px;
+  }
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoTitle {
+  font-size: 16px;
+  color: constants.$secondary;
+  font-weight: bold;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.infoText {
+  font-weight: bold;
+
+  @include constants.tablet {
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}
+
+.button {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px 8px;
+  background-color: constants.$primary;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+
+  @include constants.tablet {
+    max-width: 400px;
+    align-self: center;
+    font-size: constants.$fontSubtitleTablet;
+  }
+
+  @include constants.mobile {
+    font-size: constants.$fontSubtitleMobile;
+  }
+}

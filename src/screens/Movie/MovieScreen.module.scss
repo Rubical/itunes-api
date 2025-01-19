@@ -1,0 +1,17 @@
+@use "../../styles/constants";
+
+.main {
+  padding: 50px 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include constants.tablet {
+    margin-top: 30px;
+  }
+
+  @include constants.mobile {
+    padding: 50px 20px;
+  }
+}

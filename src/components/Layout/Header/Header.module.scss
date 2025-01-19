@@ -1,0 +1,155 @@
+@use "../../../styles/constants";
+
+.header {
+  width: 100%;
+  height: 70px;
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+
+  @include constants.mobile {
+    padding: 10px 20px;
+  }
+}
+
+.headerLogo {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+
+  @include constants.blurOnHover;
+}
+
+.headerLogoText {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.desktopNav {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+
+  @include constants.tablet {
+    display: none;
+  }
+}
+
+.desktopNavLink {
+  padding: 3px 5px;
+  font-size: 18px;
+  font-weight: bold;
+
+  @include constants.blurOnHover;
+}
+
+.desktopNavLink__active {
+  border-bottom: 3px solid constants.$primary;
+}
+
+.mobileNavMenu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  z-index: 5;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+.mobileNavMenu__hidden {
+  display: none;
+}
+
+.mobileNavLink {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.mobileNavLink__active {
+  border-bottom: 4px solid constants.$primary;
+}
+
+.mobileMenuToggle {
+  display: none;
+
+  @include constants.tablet {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.searchBar {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  border: 2px solid black;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 8px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+
+  @include constants.tablet {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px);
+  }
+
+  @include constants.mobile {
+    width: calc(100% - 40px);
+  }
+}
+
+.searchBarInput {
+  width: 100%;
+}
+
+.submitButton {
+  font-size: 14px;
+  transition: transform 0.1s ease;
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+
+.searchResultsDropdown {
+  display: none;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 2px solid black;
+  padding: 8px 13px;
+  z-index: 10; // Высокий z-index
+  overflow: auto;
+
+  @include constants.tablet {
+    width: 100%;
+    z-index: 10;
+  }
+}
+
+.searchResultsDropdown__visible {
+  display: block;
+}
