@@ -14,5 +14,5 @@
    ```
 4. Run the application:
    ```bash
-   next dev
+   npm run dev
    ```
