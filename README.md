@@ -6,7 +6,7 @@
    ```
 2. Navigate to the project directory:
    ```bash
-   cd test-2
+   cd itunes-api
    ```
 3. Install the necessary dependencies:
    ```bash
